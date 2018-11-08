@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Inter-Chat</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+	<!-- ANGULAR JS FILES START -->
+	<script src="AngularFiles/angular.js"></script>
+	<script src="AngularFiles/angular-route.js"></script>
+	<script src="AngularFiles/angular-cookies.js"></script>
+	<!-- ANGULAR JS FILES END -->
+	
+	<!-- CONFIGURATION JS FILES START -->
+	<script src="ConfigurationFiles/RouteConfiguration.js"></script>
+	<!-- CONFIGURATION JS FILES END -->
+	
+	<!-- CONTROLLER JS FILES START -->
+	<script src="Controllers/UserController.js"></script>
+	<script src="Controllers/BlogController.js"></script>
+	<script src="Controllers/ForumController.js"></script>
+	<!-- CONTROLLER JS FILES END -->
+
+	<!-- BOOTSTRAP NAVBAR START -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- BOOTSTRAP NAVBAR START -->
+
+	<style>
+		* {
+    		box-sizing: border-box;
+		}
+
+		body {
+    		font-family: Arial, Helvetica, sans-serif;
+		}
+
+		/* Style the header */
+		header {
+    		padding: 1px;
+    		text-align: center;
+    		font-size: 45px;
+    		color: white;
+		}
+
+		/* Container for flexboxes */
+		section {
+    		display: -webkit-flex;
+    		display: flex;
+		}
+
+		/* Style the navigation menu */
+		#nav1 {
+		    -webkit-flex: 2;
+    		-ms-flex: 2;
+    		flex: 0.4;
+    		background:grey;
+    		padding: 10px;
+		}
+
+		/* Style the list inside the menu */
+		nav ul {
+    		list-style-type: none;
+    		padding: 0;
+		}
+
+		/* Style the content */
+		article {
+    		-webkit-flex: 3;
+    		-ms-flex: 3;
+    		flex: 3;
+    		background-color:black;
+    		padding: 10px;
+		}
+
+		/* Style the footer */
+		footer {
+		    padding: 10px;
+    		text-align: center;
+    		color: white;
+		}
+
+		/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+		@media (max-width: 600px) {
+    	section {
+      		-webkit-flex-direction: column;
+      		flex-direction: column;
+    	}
+    	#img1 {
+			border-radius: 50%;
+		}
+	}
+		a:link{
+            color:chartreuse;
+        }
+        a:hover{
+            color:darkred;
+        }
+        a:visited{
+            color:indigo;
+        }
+        a:active{
+            color: aqua;
+            background-color: gold;
+        }
+</style>
+		
+</head>
+
+<body style="background-image: url(Images/background1.jpg)" ng-app="RouteConfiguration">
+	
+	<!-- NAVBAR START -->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<a class="navbar-brand" href="#/Blog">Inter-Blog</a>
+    		</div>
+		    <ul class="nav navbar-nav">
+      			<li class="active"><a href="#/Blog"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-pencil"></span> Blogs<span class="caret"></span></a>
+       	 			<ul class="dropdown-menu">
+          				<li><a href="#/Blog">Browse Blogs</a></li>
+          				<li><a href="#/AddBlog">Create Blog</a></li>
+          				<li><a href="#/ManageBlog">Manage Blogs</a></li>
+        			</ul>
+      			</li>
+      			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-pencil"></span> Forums<span class="caret"></span></a>
+       	 			<ul class="dropdown-menu">
+          				<li><a href="#/Forum">Browse Forums</a></li>
+          				<li><a href="#/AddForum">Create Forum</a></li>
+          				<li><a href="#/ManageForum">Manage Forums</a></li>
+        			</ul>
+      			</li>
+      			<li class="dropdown"><a class="dropdown-toggle" ng-hide="currentUser==undefined" data-toggle="dropdown" href="#"><img src="Images/friend.png"style="height: 18px; width: 20px"> Friends<span class="caret"></span></a>
+       	 			<ul class="dropdown-menu">
+          				<li><a href="#/">Pending Requests</a></li>
+          				<li><a href="#/">My Friends</a></li>
+          				<li><a href="#/">Manage Friends</a></li>
+        			</ul>
+      			</li>
+      		</ul>
+    		
+    		<!-- RIGHT NAVBAR START -->
+    		<ul class="nav navbar-nav navbar-right">
+				<li ng-hide="currentUser.role=='ROLE_USER'||currentUser.role=='ROLE_ADMIN'">
+					<a href="#/Login"><i class="glyphicon glyphicon-log-in"></i> Login</a>
+				</li>
+				<li	ng-hide="currentUser.role=='ROLE_USER'||currentUser.role=='ROLE_ADMIN'">
+					<a href="#/Register"><i class="glyphicon glyphicon-user"></i> Register</a>
+				</li>
+				<li>
+					<a href="#/AboutUs"><i class="glyphicon glyphicon-list-alt"></i> AboutUs</a>
+				</li>
+				<li>
+					<a href="#/ContactUs"><i class="glyphicon glyphicon-phone-alt"></i> ContactUs</a>
+				</li>
+			</ul>
+    		<div class="nav navbar-nav navbar-right" ng-hide="currentUser==undefined" ng-controller="UserController">
+				<ul class="nav navbar-nav">
+					<li><a class="dropdown-toggle" data-toggle="dropdown" href=""><button class="btn btn-default">Welcome {{currentUser.loginName}}</button></a>
+					<ul class="dropdown-menu">
+						<li><a href="#/UploadPicture"> Upload Profile</a></li>
+						<li><a href="#/Profile"><span class="glyphicon glyphicon-user"></span> View Profile</a></li>
+						<li align="center"	ng-show="currentUser.role=='ROLE_USER'||currentUser.role=='ROLE_ADMIN'">
+							<button value="Logout" ng-click="logout()" class="btn btn-danger">Logout</button>
+						</li>
+					</ul>
+					</li>
+					
+					<li><img id="img1" src="http://localhost:8081/Inter_Chat_Middleware/getImage/{{currentUser.loginName}}" alt="avatar" onerror=this.src="avatar.png" style="height: 50px; width: 60px"></li>
+					<!-- <li><img id="img1" src="Images/img_avatar1.png" alt="avatar" onerror=this.src="avatar.png" style="height: 50px; width: 60px"></li> -->
+				</ul>
+			</div>
+    		<!-- RIGHT NAVBAR END -->
+    		
+  		</div>
+	</nav>
+  	<!-- NAVBAR END -->
+
+	<!-- HEADER START -->
+	<header>
+  		<h2>Inter-Blog</h2>
+	</header>
+	<!-- HEADER END -->
+
+	<!-- SECTION START -->
+	<section>
+  		<nav id="nav1">
+    		<ul>
+      			<li><a href="#/Blog">Browse Blogs</a></li>
+	  			<li><a href="#/AddBlog">Create Blog</a></li>
+      			<li><a href="#/Forum">Browse Forums</a></li>
+      			<li><a href="#/AddForum">Create Forum</a></li>
+      			<li ng-show="currentUser==undefined" ng-controller="UserController"><a href="#/Login">Login</a></li>
+      			<li ng-show="currentUser==undefined" ng-controller="UserController"><a href="#/Register">Sign Up</a></li>
+      			<li><a href="#/AboutUs">About Us</a></li>
+      			<li><a href="#/ContactUs">Contact Us</a></li>
+    		</ul>
+  		</nav>
+  
+  	<article>
+  		<div ng-view>
+  		
+  		</div>  
+  	</article>
+	</section>
+	<!-- SECTION END -->
+
+  <!-- FOOTER START -->	
+	<footer>
+		<div id="footer">
+			<div class="container">
+				<div class="bottom-bar">
+					<font color="white">Copyright &copy; Inter-Blog </font><font color="white"> All Rights Reserved © 2018 | </font><a href="#/AboutUs">About Us</a> | <a href="#/ContactUs">Contact US</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- FOOTER END -->
+</body>
+</html>

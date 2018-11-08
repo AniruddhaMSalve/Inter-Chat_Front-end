@@ -1,0 +1,70 @@
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 15%;
+    border-radius: 20%;
+}
+
+.container {
+    padding: 10px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+label{color: white}
+</style>
+
+<div ng-controller="UserController">
+<form action="">
+  <div class="imgcontainer">
+    <img src="Images/img_avatar2.png"alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" name="loginName" placeholder="Enter Your Username" class="form-control last" ng-model="User.loginName" required/>
+
+    <label><b>Password</b></label>
+    <input type="password" name="password" placeholder="Enter Your Password" class="form-control last" ng-model="User.password" required/>
+        
+    <div align="center">
+			<div align="center">
+				<div><input value="Login" class="btn btn-success" ng-click="logincheck()" type="submit" /></div>
+			</div>
+	</div>
+        
+    <!-- <button type="submit">Login</button> -->
+  </div>
+</form>
+</div>

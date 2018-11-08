@@ -1,0 +1,31 @@
+<style>
+	label {
+		color: white;
+	}
+
+	th {
+		color: white;
+	}
+
+	h4 {
+		color: white;
+	}
+</style>
+
+<div class="container" ng-controller="ForumController">
+	<h4 align="center">Enter Forum Information</h4>
+	<hr>
+	<table align="center">
+		<tr>
+			<th>Forum Name</th>
+			<td><input type="text" name="forumName" ng-model="forum.forumName"/></td>
+		</tr>
+		<tr>
+			<th>Forum Content</th>
+			<td><textarea cols="80" rows="8" ng-model="forum.forumContent"></textarea></td>
+		</tr>
+		<tr align="center">
+			<td colspan="2"><input value="Insert Forum" class="btn btn-warning" ng-click="addForum()" type="submit" /></td>
+		</tr>
+	</table>
+</div>

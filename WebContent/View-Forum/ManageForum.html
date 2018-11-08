@@ -1,0 +1,32 @@
+<style>
+	label {
+		color: white;
+	}
+
+	#table2 {
+		color: white;
+	}
+
+	th {
+		color: white;
+	}
+</style>
+
+<div class="container" ng-controller="ForumController">
+	<table id="table2" class="table">
+		<tr>
+			<th>Forum Name</th>
+			<th>Forum Content</th>
+			<th>Forum Status</th>
+			<th>Approve/Reject</th>
+			<th>Delete</th>
+		</tr>
+		<tr ng-repeat="forum in forumdata">
+			<td>{{forum.forumName}}</td>
+			<td>{{forum.forumContent}}</td>
+			<td>{{forum.status}}</td>
+			<td><input value="Approve" class="btn btn-success" ng-click="approve(forum.forumId)" type="submit" /><input value="Reject" class="btn btn-danger" ng-click="reject(forum.forumId)" type="submit" /></td>
+			<td><input value="Delete" class="btn btn-danger" ng-click="delete(forum.forumId)" type="submit" /></td>
+		</tr>
+	</table>
+</div>

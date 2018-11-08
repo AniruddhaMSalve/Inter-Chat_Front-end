@@ -1,0 +1,31 @@
+<style>
+	label {
+		color: white;
+	}
+
+	#table2 {
+		color: white;
+	}
+
+	th {
+		color: white;
+	}
+</style>
+
+<!-- DISPLAY BLOG START -->
+
+<div class="container" ng-controller="ForumController">
+	<table id="table2" class="table">
+		<tr>
+			<th>Forum Name</th>
+			<th>Forum Content</th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="forum in forumdata">
+			<td>{{forum.forumName}}</td>
+			<td>{{forum.forumContent}}</td>
+		</tr>
+	</table>
+</div>
+
+<!-- DISPLAY BLOG END -->
