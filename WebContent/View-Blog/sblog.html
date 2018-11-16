@@ -1,0 +1,73 @@
+
+<div class="container" ng-controller="BlogController"
+	class="table-responsive">
+	<br /> <font color="white" face="san serif ms">
+		<h1>Welcome to {{singleBlogData.blogName}}</h1> <br />
+
+	</font> <font color="#0000A0" face="san serif ms">
+
+		<div class="list-group">
+
+			<div href="#" class="list-group-item">
+
+				<h3 class="list-group-item-heading" style="color: #0000A0">
+
+					{{singleBlogData.blogName}}</h3>
+
+				<p class="list-group-item-text">{{singleBlogData.blogContent}}</p>
+				<div align="right">
+					<button class="btn btn-info" ng-click="editBlog(blog1.blogId)">
+						<i class="fa fa-edit"></i>
+					</button>
+					<button class="btn"  ng-show="currentUser.role=='ROLE_ADMIN'" ng-click="deleteBlog(blog1.blogId)">
+						<i class="fa fa-trash"></i>
+					</button>
+
+				</div>
+				<br /> <span style="color: #0000FF">Created On : </span>{{singleBlogData.createDate}}
+				<br />
+				<button class="btn" value="LIKES"
+					ng-click="incrementLike(singleBlogData.blogId)">
+					<i class="glyphicon glyphicon-thumbs-up"></i>
+				</button>
+				{{singleBlogData.likes}} <span style="color: #0000FF">likes</span><br />
+
+			</div>
+
+		</div>
+		<div style="box-shadow: 0 0 2px grey;"
+			ng-show="singleBlogData.status=='A'">
+			<div
+				style="font-size: 30px; background-color: #D3D3D3; padding: 10px;">
+				<span class="fa fa-comments"> {{blogComments.length}}
+					comments</span>
+
+			</div>
+			<div style="padding: 20px;">
+				<form role="form" method="post">
+					<textarea ng-model="blogComment.commentText" rows="5"
+						class="form-control" required="true"></textarea>
+					<br /> <input type="hidden" ng-model="singleBlogData.blogId" /> <a
+						ng-click="addBlogComment(singleBlogData.blogId)"
+						class="btn btn-success myBoldFont pull-right"><input
+						ng-show="currentUser.loginname" type="submit" value="Post Comment"
+						class="btn btn-success myBoldFont pull-right" /></a> <br />
+				</form>
+			</div>
+			<br />
+			<div style="background-color: #D3D3D3; padding: 20px;"></div>
+			<table class="table table-hover"
+				ng-init="fetchAllBlogComments(singleBlogData.blogId)">
+				<tr ng-repeat="comment in blogComments | orderBy:'-commentedDate'"
+					style="padding: 10px;">
+					<td style="font-family: 'Helvetica Neue';color: white" colspan="2"><span
+						style="font-size: 22px; color: white; font-weight: 900">{{comment.username}}
+					</span><br /> <span
+						style="font-size: 12px; color: white; font-weight: 900">{{comment.commentDate
+							| date:"dd MMMM yyyy"}}</span><br /> <span
+						style="font-size: 17px; color: white; font-family: Footlight MT Light; font-weight: 500">{{comment.commentText}}</span></td>
+				</tr>
+			</table>
+		</div>
+	</font>
+</div>
