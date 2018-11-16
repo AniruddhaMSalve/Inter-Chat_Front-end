@@ -20,6 +20,7 @@
 	<script src="Controllers/UserController.js"></script>
 	<script src="Controllers/BlogController.js"></script>
 	<script src="Controllers/ForumController.js"></script>
+	<script src="Controllers/FriendController.js"></script>
 	<!-- CONTROLLER JS FILES END -->
 
 	<!-- BOOTSTRAP NAVBAR START -->
@@ -119,25 +120,26 @@
     		</div>
 		    <ul class="nav navbar-nav">
       			<li class="active"><a href="#/Blog"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-pencil"></span> Blogs<span class="caret"></span></a>
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" ><span class="glyphicon glyphicon-pencil"></span> Blogs<span class="caret"></span></a>
        	 			<ul class="dropdown-menu">
+       	 				<li><a href="#/SingleBlog">Single Blog</a></li>
           				<li><a href="#/Blog">Browse Blogs</a></li>
           				<li><a href="#/AddBlog">Create Blog</a></li>
           				<li><a href="#/ManageBlog">Manage Blogs</a></li>
         			</ul>
       			</li>
-      			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-pencil"></span> Forums<span class="caret"></span></a>
+      			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pencil"></span> Forums<span class="caret"></span></a>
        	 			<ul class="dropdown-menu">
           				<li><a href="#/Forum">Browse Forums</a></li>
           				<li><a href="#/AddForum">Create Forum</a></li>
           				<li><a href="#/ManageForum">Manage Forums</a></li>
         			</ul>
       			</li>
-      			<li class="dropdown"><a class="dropdown-toggle" ng-hide="currentUser==undefined" data-toggle="dropdown" href="#"><img src="Images/friend.png"style="height: 18px; width: 20px"> Friends<span class="caret"></span></a>
+      			<li class="dropdown"><a class="dropdown-toggle" ng-hide="currentUser==undefined" data-toggle="dropdown" ><img src="Images/friend.png"style="height: 18px; width: 20px"> Friends<span class="caret"></span></a>
        	 			<ul class="dropdown-menu">
-          				<li><a href="#/">Pending Requests</a></li>
-          				<li><a href="#/">My Friends</a></li>
-          				<li><a href="#/">Manage Friends</a></li>
+          				<li><a href="#/Friends">My Friends</a></li>
+          				<li><a href="#/PendingFriends">Pending Requests</a></li>
+          				<li><a href="#/SuggestedFriends">Suggested Friends</a></li>
         			</ul>
       			</li>
       		</ul>
@@ -159,18 +161,17 @@
 			</ul>
     		<div class="nav navbar-nav navbar-right" ng-hide="currentUser==undefined" ng-controller="UserController">
 				<ul class="nav navbar-nav">
-					<li><a class="dropdown-toggle" data-toggle="dropdown" href=""><button class="btn btn-default">Welcome {{currentUser.loginName}}</button></a>
+					<li><a class="dropdown-toggle" data-toggle="dropdown" href=""><button class="btn btn-sm btn-default">Welcome {{currentUser.loginName}}</button></a>
 					<ul class="dropdown-menu">
 						<li><a href="#/UploadPicture"> Upload Profile</a></li>
 						<li><a href="#/Profile"><span class="glyphicon glyphicon-user"></span> View Profile</a></li>
 						<li align="center"	ng-show="currentUser.role=='ROLE_USER'||currentUser.role=='ROLE_ADMIN'">
-							<button value="Logout" ng-click="logout()" class="btn btn-danger">Logout</button>
+							<button value="Logout" ng-click="logout()" class="btn btn-sm btn-danger">Logout</button>
 						</li>
 					</ul>
 					</li>
 					
 					<li><img id="img1" src="http://localhost:8081/Inter_Chat_Middleware/getImage/{{currentUser.loginName}}" alt="avatar" onerror=this.src="avatar.png" style="height: 50px; width: 60px"></li>
-					<!-- <li><img id="img1" src="Images/img_avatar1.png" alt="avatar" onerror=this.src="avatar.png" style="height: 50px; width: 60px"></li> -->
 				</ul>
 			</div>
     		<!-- RIGHT NAVBAR END -->

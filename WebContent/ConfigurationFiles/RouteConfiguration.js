@@ -4,6 +4,7 @@ application.config(function($routeProvider,$locationProvider)
     console.log("Route Configuration Accessed");
     $locationProvider.hashPrefix('');
     $routeProvider
+    .when('/SingleBlog',{templateUrl:"View-Blog/sblog.html"})
     .when('/ContactUs',{templateUrl:"View-Pages/ContactUs.html"})
     .when('/AboutUs',{templateUrl:"View-Pages/AboutUs.html"})
     .when('/Blog',{templateUrl:"View-Blog/Blog.html"})
@@ -16,6 +17,9 @@ application.config(function($routeProvider,$locationProvider)
     .when('/Login',{templateUrl:"View-User/Login.html"})
     .when('/Profile',{templateUrl:"View-User/Profile.html"})
     .when('/UploadPicture',{templateUrl:"View-User/UploadPicture.html"})
+    .when('/Friends',{templateUrl:"View-Friend/FriendList.html"})
+    .when('/PendingFriends',{templateUrl:"View-Friend/FriendPending.html"})
+    .when('/SuggestedFriends',{templateUrl:"View-Friend/FriendSuggestion.html"})
     ;
 });
 
@@ -27,15 +31,3 @@ application.run(function($rootScope,$cookieStore){
         $rootScope.currentUser=$cookieStore.get('userDetails');
     }
 });
-
-/*application.run(function($rootScope, $cookieStore) {
-	console.log('Run Accessed');
-	console.log($rootScope.currentUser);
-
-	if ($rootScope.currentUser == undefined) {
-		$rootScope.currentUser = $cookieStore.get('userDetails');
-	} else {
-		console.log($rootScope.currentUser.loginName);
-		console.log($rootScope.currentUser.role);
-	}
-});*/
