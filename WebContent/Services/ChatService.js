@@ -1,7 +1,7 @@
 application.service('chatService', function($q, $timeout) {
 	console.log('Starting Service');
 
-	var base_url = "http://localhost:8081/Inter_Chat_Middleware";
+	var base_url = "http://localhost:8081/Inter_Chat_Middleware/";
 
 	var service = {}, listener = $q.defer(), socket = {
 		client : null,

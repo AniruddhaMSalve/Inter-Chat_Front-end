@@ -23,14 +23,14 @@ application.controller("UserController", function($scope, $http, $cookies,
 		});
 	}
 	
-	function getUser() {
+	$scope.getUser=function() {
 		console.log('Get User Accessed');
 		loginName = $rootScope.currentUser.loginName;
 		$http.get('http://localhost:8081/Inter_Chat_Middleware/getUserDetail/'+loginName)
 				.then(function(response) {
 					console.log(response.data)
 					$scope.blogdata = response.data
-					$location.path("/UpdateUser");
+					$location.path("/Chat");
 				});
 	}
 	
