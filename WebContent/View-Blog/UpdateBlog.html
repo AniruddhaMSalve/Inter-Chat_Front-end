@@ -23,7 +23,7 @@ h4 {
 </style>
 
 <div class="container" ng-controller="BlogController">
-	<h4 align="center">Enter Blog Information</h4>
+	<h4 align="center">Update Blog Information</h4>
 	<hr>
 	<table align="center">
 		<tr>
@@ -35,8 +35,8 @@ h4 {
 			<td><textarea cols="80" required rows="8" ng-model="blog.blogDesc"></textarea></td>
 		</tr>
 		<tr align="center">
-			<td colspan="2"><input value="Insert Blog"
-				class="btn btn-warning" ng-click="addBlog()" type="submit" /></td>
+			<td colspan="2"><input value="Update Blog"
+				class="btn btn-warning" ng-click="updateBlog(blog.blogId)" type="submit" /></td>
 		</tr>
 	</table>
 </div>

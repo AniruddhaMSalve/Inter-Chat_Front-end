@@ -1,0 +1,60 @@
+<style>
+label {
+	color: black;
+}
+
+th {
+	color: black;
+}
+
+hr {
+	display: block;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: inset;
+	border-width: 1px;
+}
+
+h4 {
+	color: black;
+}
+</style>
+
+<div class="container" ng-controller="JobController">
+	<h4 align="center">Enter Job Information</h4>
+	<hr>
+	<table align="center">
+		<tr>
+			<th>Job Description</th>
+			<td><input type="text" required name="jobDescription" ng-model="job.jobDescription" /></td>
+		</tr>
+		<tr>
+			<th>Job Designation</th>
+			<td><input type="text" required name="jobDesignation" ng-model="job.jobDesignation" /></td>
+		</tr>
+		<tr>
+			<th>Company</th>
+			<td><input type="text" required name="company" ng-model="job.company" /></td>
+		</tr>
+		<tr>
+			<th>Location</th>
+			<td><input type="text" required name="location" ng-model="job.location" /></td>
+		</tr>
+		<tr>
+			<th>Salary</th>
+			<td><input type="text" required name="salary" ng-model="job.salary" /></td>
+		</tr>
+		<tr>
+			<th>Last Date To Apply</th>
+			<td><input type="text" required name="lastDateToApply" ng-model="job.lastDateToApply" /></td>
+		</tr>
+		<tr align="center">
+			<td colspan="2"><input value="Insert Job"
+				class="btn btn-warning" ng-click="addJob()" type="submit" /></td>
+		</tr>
+	</table>
+</div>
+<br>
+<br>

@@ -1,70 +1,79 @@
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
-
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+img.avatar {
+	width: 15%;
+	border-radius: 20%;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+.imgcontainer {
+	text-align: center;
+	margin: 24px 0 12px 0;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+	border: 3px solid #f1f1f1;
 }
 
 button:hover {
-    opacity: 0.8;
-}
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
+	opacity: 0.8;
 }
 
-img.avatar {
-    width: 15%;
-    border-radius: 20%;
+h2 {
+	color: black;
 }
 
-.container {
-    padding: 10px;
+label {
+	color: black;
 }
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-label{color: white}
 </style>
 
-<div ng-controller="UserController">
-<form action="">
-  <div class="imgcontainer">
-    <img src="Images/img_avatar2.png"alt="Avatar" class="avatar">
-  </div>
-
-  <div class="container">
-    <label><b>Username</b></label>
-    <input type="text" name="loginName" placeholder="Enter Your Username" class="form-control last" ng-model="User.loginName" required/>
-
-    <label><b>Password</b></label>
-    <input type="password" name="password" placeholder="Enter Your Password" class="form-control last" ng-model="User.password" required/>
-        
-    <div align="center">
-			<div align="center">
-				<div><input value="Login" class="btn btn-success" ng-click="logincheck()" type="submit" /></div>
-			</div>
+<div style="background-image: url(Images/background2.jpg)"
+	ng-controller="UserController">
+	<div class="imgcontainer">
+		<hr></hr>
+		<h2 align="center">
+			<b>Login</b>
+		</h2>
+		<hr></hr>
+		<img src="Images/img_avatar1.png" alt="Avatar" class="avatar">
 	</div>
-        
-    <!-- <button type="submit">Login</button> -->
-  </div>
-</form>
+	<div class="container">
+		<div class="row ">
+			<div align="center">
+				<div class="row">
+					<div class="col-xs-4">
+						<label><b><font size="5">Username :</font></b></label>
+					</div>
+					<div class="col-xs-4">
+						<input type="text" name="loginName"
+							placeholder="Enter Your Username" class="form-control last"
+							ng-model="User.loginName" required />
+					</div>
+				</div>
+			</div>
+			<br>
+			<div align="center">
+				<div class="row">
+					<div class="col-xs-4">
+						<label><b><font size="5">Password :</font></b></label>
+					</div>
+					<div class="col-xs-4">
+						<input type="password" name="password"
+							placeholder="Enter Your Password" class="form-control last"
+							ng-model="User.password" required />
+					</div>
+				</div>
+			</div>
+			<br>
+			<div align="center">
+				<input value="Login" class="btn btn-success" ng-click="logincheck()"
+					type="submit" />
+			</div>
+		</div>
+	</div>
+
+	<br> <br>
 </div>

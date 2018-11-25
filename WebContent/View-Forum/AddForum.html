@@ -1,15 +1,25 @@
 <style>
-	label {
-		color: white;
-	}
+label {
+	color: black;
+}
 
-	th {
-		color: white;
-	}
+th {
+	color: black;
+}
 
-	h4 {
-		color: white;
-	}
+hr {
+	display: block;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: inset;
+	border-width: 1px;
+}
+
+h4 {
+	color: black;
+}
 </style>
 
 <div class="container" ng-controller="ForumController">
@@ -18,14 +28,16 @@
 	<table align="center">
 		<tr>
 			<th>Forum Name</th>
-			<td><input type="text" name="forumName" ng-model="forum.forumName"/></td>
+			<td><input type="text" name="forumName"
+				ng-model="forum.forumName" /></td>
 		</tr>
 		<tr>
 			<th>Forum Content</th>
 			<td><textarea cols="80" rows="8" ng-model="forum.forumContent"></textarea></td>
 		</tr>
 		<tr align="center">
-			<td colspan="2"><input value="Insert Forum" class="btn btn-warning" ng-click="addForum()" type="submit" /></td>
+			<td colspan="2"><input value="Insert Forum"
+				class="btn btn-warning" ng-click="addForum()" type="submit" /></td>
 		</tr>
 	</table>
 </div>

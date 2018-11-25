@@ -1,0 +1,36 @@
+<style>
+label {
+	color: black;
+}
+
+#table2 {
+	color: black;
+}
+
+th {
+	color: black;
+}
+</style>
+
+<div class="container" ng-controller="JobController">
+	<table id="table2" class="table">
+		<tr>
+			<th>Job Id</th>
+			<th>Job Designation</th>
+			<th>Job Description</th>
+			<th>Company</th>
+			<th>Salary</th>
+			<th>Location</th>
+			<th>Last Date To Apply</th>
+		</tr>
+		<tr ng-repeat="job in jobdata">
+			<td>{{job.jobId}}</td>
+			<td>{{job.jobDesignation}}</td>
+			<td>{{job.jobDescription}}</td>
+			<td>{{job.company}}</td>
+			<td>{{job.salary}}</td>
+			<td>{{job.location}}</td>
+			<td>{{job.lastDateToApply}}</td>
+		</tr>
+	</table>
+</div>

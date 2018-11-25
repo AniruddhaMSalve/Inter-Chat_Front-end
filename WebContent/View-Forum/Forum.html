@@ -1,31 +1,37 @@
 <style>
-	label {
-		color: white;
-	}
+label {
+	color: black;
+}
 
-	#table2 {
-		color: white;
-	}
+h2 {
+	color: black;
+}
 
-	th {
-		color: white;
-	}
+p {
+	color: black;
+}
+
+hr {
+	display: block;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: inset;
+	border-width: 1px;
+}
 </style>
 
-<!-- DISPLAY BLOG START -->
+<!-- DISPLAY FORUM START -->
 
 <div class="container" ng-controller="ForumController">
-	<table id="table2" class="table">
-		<tr>
-			<th>Forum Name</th>
-			<th>Forum Content</th>
-			<th></th>
-		</tr>
-		<tr ng-repeat="forum in forumdata">
-			<td>{{forum.forumName}}</td>
-			<td>{{forum.forumContent}}</td>
-		</tr>
-	</table>
+	<p ng-repeat="forum in forumdata">
+		<font size="8"><b>{{forum.forumName}}</b></font><br>
+		<font size="3">{{forum.forumContent}}</font>
+		<button type="button" ng-click="showComment(forum.forumId)"
+			class="btn btn-default btn-sm">Comments</button>
+	</p>
+	<hr>
 </div>
 
-<!-- DISPLAY BLOG END -->
+<!-- DISPLAY FORUM END -->

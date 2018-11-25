@@ -1,15 +1,15 @@
 <style>
-	label {
-		color: white;
-	}
+label {
+	color: black;
+}
 
-	#table2 {
-		color: white;
-	}
+#table2 {
+	color: black;
+}
 
-	th {
-		color: white;
-	}
+th {
+	color: black;
+}
 </style>
 
 <div class="container" ng-controller="ForumController">
@@ -25,8 +25,12 @@
 			<td>{{forum.forumName}}</td>
 			<td>{{forum.forumContent}}</td>
 			<td>{{forum.status}}</td>
-			<td><input value="Approve" class="btn btn-success" ng-click="approve(forum.forumId)" type="submit" /><input value="Reject" class="btn btn-danger" ng-click="reject(forum.forumId)" type="submit" /></td>
-			<td><input value="Delete" class="btn btn-danger" ng-click="delete(forum.forumId)" type="submit" /></td>
+			<td><input value="Approve" class="btn btn-success"
+				ng-click="approve(forum.forumId)" type="submit" /><input
+				value="Reject" class="btn btn-danger"
+				ng-click="reject(forum.forumId)" type="submit" /></td>
+			<td><input value="Delete" class="btn btn-danger"
+				ng-click="delete(forum.forumId)" type="submit" /></td>
 		</tr>
 	</table>
 </div>

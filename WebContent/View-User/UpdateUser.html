@@ -39,7 +39,7 @@ label {
 	<div class="imgcontainer">
 		<hr></hr>
 		<h2 align="center">
-			<b>Registration-Form</b>
+			<b>Update User</b>
 		</h2>
 		<hr></hr>
 		<img src="Images/img_avatar2.png" alt="Avatar" class="avatar">
@@ -52,7 +52,7 @@ label {
 						<label><b><font size="5">Your Name :</font></b></label>
 					</div>
 					<div class="col-xs-4">
-						<input type="text" name="username" placeholder="Enter Your Name"
+						<input type="text" name="username" placeholder="{{currentUser.username}}"
 							class="form-control last" ng-model="User.username" required />
 					</div>
 				</div>
@@ -66,7 +66,7 @@ label {
 					</div>
 					<div class="col-xs-4">
 						<input type="text" name="loginName"
-							placeholder="Enter Your Username" class="form-control last"
+							placeholder="{{currentUser.loginName}}" class="form-control last"
 							ng-model="User.loginName" required />
 					</div>
 				</div>
@@ -78,7 +78,7 @@ label {
 						<label class="mail"><b><font size="5">Email :</font></b></label>
 					</div>
 					<div class="col-xs-4">
-						<input type="email" name="emailId" placeholder="Enter Your Email"
+						<input type="email" name="emailId" placeholder="{{currentUser.emailId}}"
 							class="form-control last" ng-model="User.emailId" required />
 					</div>
 				</div>
@@ -92,7 +92,7 @@ label {
 					</div>
 					<div class="col-xs-4">
 						<input type="text" maxlength="10" name="mobileNo"
-							placeholder="Enter Your Mobile Number" class="form-control last"
+							placeholder="{{currentUser.mobileNo}}" class="form-control last"
 							ng-model="User.mobileNo" required />
 					</div>
 				</div>
@@ -106,7 +106,7 @@ label {
 					</div>
 					<div class="col-xs-4">
 						<input type="password" name="password"
-							placeholder="Enter Your Password" class="form-control last"
+							placeholder="{{currentUser.password}}" class="form-control last"
 							ng-model="User.password" required />
 					</div>
 				</div>
@@ -118,7 +118,7 @@ label {
 						<label class="addr"><b><font size="5">Address :</font></b></label>
 					</div>
 					<div class="col-xs-4">
-						<input type="text" name="address" placeholder="Enter Your Address"
+						<input type="text" name="address" placeholder="{{currentUser.addr}}"
 							class="form-control last" ng-model="User.address" required />
 					</div>
 				</div>
@@ -126,15 +126,9 @@ label {
 			<br>
 			<div align="center">
 				<div align="center">
-					<h4>By clicking on Register you are accepting our Terms of
-						Services.</h4>
-				</div>
-			</div>
-			<div align="center">
-				<div align="center">
 					<div>
-						<input value="Register User" class="btn btn-success"
-							ng-click="register()" type="submit" />
+						<input value="Update User" class="btn btn-success"
+							ng-click="updateUserDetail(currentUser.loginName)" type="submit" />
 					</div>
 				</div>
 			</div>

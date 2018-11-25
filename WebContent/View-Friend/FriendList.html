@@ -1,22 +1,26 @@
 <style>
-	table{
-		color:white;
-	}
+table {
+	color: black;
+}
 </style>
 <div class="container" ng-controller="FriendController">
 	<table>
 		<tr ng-repeat="friend in friendList">
+			<td ng-hide="friend.friendLoginName==currentUser.loginName"><img
+				src="http://localhost:8081/Inter_Chat_Middleware/getImage/{{friend.friendLoginName}}"
+				class="img-circle" height="100px" width="100px" /></td>
 			<td ng-hide="friend.friendLoginName==currentUser.loginName">
-				<img src="http://localhost:8081/Inter_Chat_Middleware/getImage/{{friend.friendLoginName}}" class="img-circle" height="100px" width="100px"/>
+				<h4>&nbsp&nbsp{{friend.friendLoginName}}</h4>&nbsp&nbsp<input
+				type="button" value="Unfriend" class="btn btn-danger"
+				ng-click="unfriend(friend.friendId)" /><br>
 			</td>
-			<td ng-hide="friend.friendLoginName==currentUser.loginName">	
-				<h4>&nbsp&nbsp{{friend.friendLoginName}}</h4>&nbsp&nbsp<input type="button" value="Unfriend" class="btn btn-danger" ng-click="unfriend(friend.friendId)"/><br>
-			</td>
+			<td ng-show="friend.friendLoginName==currentUser.loginName"><img
+				src="http://localhost:8081/Inter_Chat_Middleware/getImage/{{friend.loginName}}"
+				class="img-circle" height="100px" width="100px" /></td>
 			<td ng-show="friend.friendLoginName==currentUser.loginName">
-				<img src="http://localhost:8081/Inter_Chat_Middleware/getImage/{{friend.loginName}}" class="img-circle" height="100px" width="100px"/>
-			</td>
-			<td ng-show="friend.friendLoginName==currentUser.loginName">
-				<h4>&nbsp&nbsp{{friend.loginName}}</h4>&nbsp&nbsp<input type="button" value="Unfriend" class="btn btn-danger" ng-click="unfriend(friend.friendId)"/><br>
+				<h4>&nbsp&nbsp{{friend.loginName}}</h4>&nbsp&nbsp<input
+				type="button" value="Unfriend" class="btn btn-danger"
+				ng-click="unfriend(friend.friendId)" /><br>
 			</td>
 		</tr>
 	</table>

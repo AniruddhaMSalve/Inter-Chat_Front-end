@@ -1,0 +1,28 @@
+<style>
+label {
+	color: black;
+}
+
+#table2 {
+	color: black;
+}
+
+th {
+	color: black;
+}
+</style>
+
+<div class="container" ng-controller="JobController">
+	<table id="table2" class="table">
+		<tr>
+			<th>Application Id</th>
+			<th>Job Id</th>
+			<th>Date Of Application</th>
+		</tr>
+		<tr ng-repeat="applyjob in applyjobdata">
+			<td>{{applyjob.applicationId}}</td>
+			<td>{{applyjob.jobId}}</td>
+			<td>{{applyjob.appliedDate}}</td>
+		</tr>
+	</table>
+</div>

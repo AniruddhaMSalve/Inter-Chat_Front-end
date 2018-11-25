@@ -1,0 +1,64 @@
+<style>
+label {
+	color: black;
+}
+
+#table2 {
+	color: black;
+}
+
+th {
+	color: black;
+}
+
+h2 {
+	color: black;
+}
+
+p {
+	color: black;
+}
+
+hr {
+	display: block;
+}
+</style>
+
+<div ng-controller="ForumCommentController">
+	<div>
+		<p>
+			<font size="8"><b>{{forumdata.forumName}}</b></font><br>
+			<font size="3">{{forumdata.forumContent}}</font>
+		</p>
+		<hr>
+	</div>
+	<div>
+		<div align="left">
+			<p ng-repeat="forumComment in forumcommentdata">
+				<br>&nbsp&nbsp&nbsp<img id="img1"
+					src="http://localhost:8081/Inter_Chat_Middleware/getImage/{{forumComment.loginName}}"
+					class="img-circle" alt="avatar" style="height: 50px; width: 60px">
+				<b>{{forumComment.loginName}}</b> {{forumComment.commentText}}
+				{{forumComment.commentDate}} <input type="button"
+					class="btn btn-sm btn-danger" value="Delete"
+					ng-show="currentUser.role=='ROLE_ADMIN'"
+					ng-click="delete(forumComment.commentId)">
+			</p>
+		</div>
+		<div ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'">
+			<table>
+				<tr>
+					<th>&nbsp&nbsp&nbspComment&nbsp&nbsp&nbsp</th>
+					<td><textarea cols="80" rows="2"
+							ng-model="forumComment.commentText"></textarea></td>
+				</tr>
+				<tr align="center">
+					<td colspan="2"><input value="Comment"
+						class="btn btn-sm btn-default" ng-click="addComment()"
+						type="submit" /></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<br>
+</div>

@@ -1,31 +1,47 @@
 <style>
-	label {
-		color: white;
-	}
+label {
+	color: black;
+}
 
-	#table2 {
-		color: white;
-	}
+h2 {
+	color: black;
+}
 
-	th {
-		color: white;
-	}
+p {
+	color: black;
+}
+
+hr {
+	display: block;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: inset;
+	border-width: 1px;
+}
 </style>
 
 <!-- DISPLAY BLOG START -->
 
 <div class="container" ng-controller="BlogController">
-	<table id="table2" class="table">
-		<tr>
-			<th>Blog Name</th>
-			<th>Blog Content</th>
-			<th></th>
-		</tr>
-		<tr ng-repeat="blog in blogdata">
-			<td>{{blog.blogName}}</td>
-			<td>{{blog.blogDesc}}   <button type="button" class="btn btn-default btn-sm" ng-click="incrementLikes(blog.blogId)"><span class="glyphicon glyphicon-thumbs-up"></span> {{blog.likes}}</button> <button type="button" class="btn btn-default btn-sm" ng-click="incrementDislikes(blog.blogId)"><span class="glyphicon glyphicon-thumbs-down"></span> {{blog.dislikes}}</button></td>
-		</tr>
-	</table>
+	<p ng-repeat="blog in blogdata">
+		<font size="8"><b>{{blog.blogName}}</b></font><br> <font size="3">{{blog.blogDesc}}</font>
+		<button type="button" class="btn btn-default btn-sm"
+			ng-click="incrementLikes(blog.blogId)">
+			<span class="glyphicon glyphicon-thumbs-up"></span> {{blog.likes}}
+		</button>
+		<button type="button" class="btn btn-default btn-sm"
+			ng-click="incrementDislikes(blog.blogId)">
+			<span class="glyphicon glyphicon-thumbs-down"></span>
+			{{blog.dislikes}}
+		</button>
+		<button type="button" ng-click="showComment(blog.blogId)"
+			class="btn btn-default btn-sm">Comments</button>
+			<button ng-hide="currentUser.role=='ROLE_ADMIN'||currentUser==undefined" type="button" ng-click="update(blog.blogId)"
+			class="btn btn-default btn-sm">Update</button>
+	</p>
+	<hr>
 </div>
 
 <!-- DISPLAY BLOG END -->
