@@ -26,8 +26,10 @@ hr {
 
 <div class="container" ng-controller="ForumController">
 	<p ng-repeat="forum in forumdata">
-		<font size="8"><b>{{forum.forumName}}</b></font><br>
-		<font size="3">{{forum.forumContent}}</font>
+		<font size="8"><b>{{forum.forumName}}</b></font><br><img src="Images/forum2.png" alt="Avatar"
+			style="height: 60%; width: 60%"><br>
+		<br> <font
+			size="3">{{forum.forumContent}}</font>
 		<button type="button" ng-click="showComment(forum.forumId)"
 			class="btn btn-default btn-sm">Comments</button>
 	</p>

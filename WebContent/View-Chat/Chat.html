@@ -1,24 +1,21 @@
 <div class="container" ng-controller="ChatController">
-
-	<form ng-submit="addMessage()" name="chatMsg">
-		<table class="table">
-
-			<tr>
-				<td>Chat Text</td>
-				<td><input type="text" ng-model="message" /> <span
-					class="count" ng-bind="max - message.length">140</span></td>
-				<td>
-					<button ng-disabled="message.length>140||message.length==0"
-						class="btn btn-info">Send</button>
-				</td>
-			</tr>
-		</table>
-	</form>
-
+<div class="imgcontainer">
+	<hr></hr>
+	<h2 align="center">
+	<b>Chat</b>
+	</h2>
+	<hr></hr>
+	<p align="right">
+		<img src="Images/chat.jpg" alt="Avatar" align="left" style="height:50%;width:50%">
+		<form ng-submit="addMessage()" name="chatMsg">&nbsp&nbsp&nbsp
+		<b>Chat Text</b>
+			<input type="text" ng-model="message" /> <span class="count" ng-bind="max - message.length">140</span>
+			<button ng-disabled="message.length>140||message.length==0" class="btn btn-info">Send</button>
+		</form>
 	<p ng-repeat="message in messages|orderBy:'time':true">
 		<img id="img1" src="http://localhost:8081/Inter_Chat_Middleware/getImage/{{currentUser.loginName}}" alt="avatar" class="img-circle" style="height: 50px; width: 60px">{{currentUser.username}}
 		<time>{{message.time|date:'HH:MM'}}</time>
 		<span><b>{{message.message}}</b></span>
 	</p>
-
+</div>
 </div>

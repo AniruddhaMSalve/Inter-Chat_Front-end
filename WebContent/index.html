@@ -159,7 +159,7 @@ footer {
 					data-toggle="dropdown"><span class="glyphicon glyphicon-certificate"></span>
 						Jobs<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#/Job">Browse Jobs</a></li>
+						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/Job">Browse Jobs</a></li>
 						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_USER'"><a href="#/AddJob">Add Job</a></li>
 						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_USER'"><a href="#/ManageJob">Manage Job</a></li>
 						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/ApplyJob">Job Application</a></li>
@@ -204,9 +204,9 @@ footer {
 							<li><a href="#/UploadPicture"> Upload Profile Picture</a></li>
 							<li><a href="#/Profile"><span
 									class="glyphicon glyphicon-user"></span> View Profile</a></li>
-							<li><a href="#/Chat"><span
+							<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/Chat"><span
 									class="glyphicon glyphicon-envelope"></span> Chat</a></li>
-									<li><a href="#/AppliedJob"><span
+									<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/AppliedJob"><span
 									class="glyphicon glyphicon-certificate"></span> Applied Jobs</a></li>
 							<li align="center"
 								ng-show="currentUser.role=='ROLE_USER'||currentUser.role=='ROLE_ADMIN'">
