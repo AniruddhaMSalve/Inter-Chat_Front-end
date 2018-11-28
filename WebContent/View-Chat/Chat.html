@@ -1,21 +1,49 @@
+<style>
+label {
+	color: black;
+}
+
+h2 {
+	color: black;
+}
+
+p {
+	color: black;
+}
+
+hr {
+	display: block;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: inset;
+	border-width: 1px;
+}
+</style>
 <div class="container" ng-controller="ChatController">
-<div class="imgcontainer">
-	<hr></hr>
-	<h2 align="center">
-	<b>Chat</b>
-	</h2>
-	<hr></hr>
-	<p align="right">
-		<img src="Images/chat.jpg" alt="Avatar" align="left" style="height:50%;width:50%">
-		<form ng-submit="addMessage()" name="chatMsg">&nbsp&nbsp&nbsp
-		<b>Chat Text</b>
-			<input type="text" ng-model="message" /> <span class="count" ng-bind="max - message.length">140</span>
-			<button ng-disabled="message.length>140||message.length==0" class="btn btn-info">Send</button>
+	<div class="imgcontainer">
+		<hr></hr>
+		<h2 align="center">
+			<b>Chat</b>
+		</h2>
+		<hr></hr>
+		<p align="right">
+			<img src="Images/chat.jpg" alt="Avatar" align="left"
+				style="height: 50%; width: 50%">
+		<form ng-submit="addMessage()" name="chatMsg">
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Chat Text</b> <input type="text"
+				ng-model="message" /> <span class="count"
+				ng-bind="max - message.length">140</span>
+			<button ng-disabled="message.length>140||message.length==0"
+				class="btn btn-info">Send</button>
 		</form>
-	<p ng-repeat="message in messages|orderBy:'time':true">
-		<img id="img1" src="http://localhost:8081/Inter_Chat_Middleware/getImage/{{currentUser.loginName}}" alt="avatar" class="img-circle" style="height: 50px; width: 60px">{{currentUser.username}}
-		<time>{{message.time|date:'HH:MM'}}</time>
-		<span><b>{{message.message}}</b></span>
-	</p>
-</div>
+		<p ng-repeat="message in messages|orderBy:'time':true">
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img id="img1" src="Images/img_avatar1.png" alt="avatar"
+				class="img-circle" onerror=this.src=
+				"avatar.png" style="height: 60px; width: 60px">
+			<time>{{message.time|date:'HH:MM'}}</time>
+			<span><b>{{message.message}}</b></span>
+		</p>
+	</div>
 </div>

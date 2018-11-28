@@ -24,14 +24,12 @@ hr {
 
 <!-- DISPLAY FORUM START -->
 
-<div class="container" ng-controller="ForumController">
-	<p ng-repeat="forum in forumdata">
+<div class="container" ng-controller="MyForumController">
+	<p ng-repeat="forum in myforumdata">
 		<font size="8"><b>{{forum.forumName}}</b></font></font> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp created by <i><b>{{forum.loginName}}</b> on {{forum.createDate}}</i><br><img src="Images/forum2.png" alt="Avatar"
 			style="height: 60%; width: 60%"><br>
 		<br> <font
 			size="3">{{forum.forumContent}}</font>
-		<button type="button" ng-click="showComment(forum.forumId)"
-			class="btn btn-default btn-sm">Comments</button>
 	</p>
 	<hr>
 </div>

@@ -19,7 +19,7 @@ application.controller("BlogController", function($scope, $http,$rootScope, $loc
 					$scope.blogdata = response.data
 				});
 	}
-	
+
 	$scope.addBlog = function() {
 		console.log('Add Blog Accessed');
 		alert("Blog Added");

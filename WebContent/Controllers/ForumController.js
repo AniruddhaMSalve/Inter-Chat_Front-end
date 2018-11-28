@@ -8,6 +8,7 @@ application.controller("ForumController", function($scope,$rootScope, $http, $lo
 		'status' : '',
 	};
 	$scope.forumdata;
+	
 	function listForum() {
 		console.log('List Forum Accessed')
 		$http.get('http://localhost:8081/Inter_Chat_Middleware/showAllForum')
@@ -62,6 +63,6 @@ application.controller("ForumController", function($scope,$rootScope, $http, $lo
 		$location.path("/ForumComment");
 	}
 
-		listForum()
+		listForum();
 
 });

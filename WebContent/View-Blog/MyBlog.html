@@ -24,22 +24,15 @@ hr {
 
 <!-- DISPLAY BLOG START -->
 
-<div class="container" ng-controller="BlogController">
-	<p ng-repeat="blog in blogdata">
+<div class="container" ng-controller="MyBlogController">
+	<p ng-repeat="blog in myblogdata">
 		<font size="8"><b>{{blog.blogName}}</b></font> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp created by <i><b>{{blog.loginName}}</b> on {{blog.createDate}}</i> <img
 			src="Images/blog.jpg" alt="Avatar" style="height: 80%; width: 80%"><br>
 		<br> <font size="3">{{blog.blogDesc}}</font>
-		<button type="button" class="btn btn-default btn-sm"
-			ng-click="incrementLikes(blog.blogId)">
-			<span class="glyphicon glyphicon-thumbs-up"></span> {{blog.likes}}
-		</button>
-		<button type="button" class="btn btn-default btn-sm"
-			ng-click="incrementDislikes(blog.blogId)">
-			<span class="glyphicon glyphicon-thumbs-down"></span>
-			{{blog.dislikes}}
-		</button>
-		<button type="button" ng-click="showComment(blog.blogId)"
-			class="btn btn-default btn-sm">Comments</button>
+		<button
+			ng-hide="currentUser.role=='ROLE_ADMIN'||currentUser==undefined"
+			type="button" ng-click="update(blog.blogId)"
+			class="btn btn-default btn-sm">Update</button>
 	</p>
 	<hr>
 </div>

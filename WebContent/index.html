@@ -19,10 +19,10 @@
 <!-- CONTROLLER JS FILES START -->
 <script src="Controllers/UserController.js"></script>
 <script src="Controllers/BlogController.js"></script>
+<script src="Controllers/MyBlogController.js"></script>
 <script src="Controllers/BlogCommentController.js"></script>
-<script src="Controllers/BlogImageController.js"></script>
-<script src="Controllers/CommentBlog.js"></script>
 <script src="Controllers/ForumController.js"></script>
+<script src="Controllers/MyForumController.js"></script>
 <script src="Controllers/ForumCommentController.js"></script>
 <script src="Controllers/FriendController.js"></script>
 <script src="Controllers/ChatController.js"></script>
@@ -137,6 +137,7 @@ footer {
 						class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#/Blog">Browse Blogs</a></li>
+						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/MyBlog">My Blogs</a></li>
 						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/AddBlog">Create
 								Blog</a></li>
 						<li
@@ -148,6 +149,7 @@ footer {
 						Forums<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#/Forum">Browse Forums</a></li>
+						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/MyForum">My Forums</a></li>
 						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/AddForum">Create
 								Forum</a></li>
 						<li

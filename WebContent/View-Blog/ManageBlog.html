@@ -16,6 +16,7 @@ th {
 	<table id="table2" class="table">
 		<tr>
 			<th>Blog Name</th>
+			<th>Username</th>
 			<th>Blog Content</th>
 			<th>Blog Status</th>
 			<th>Likes</th>
@@ -26,6 +27,7 @@ th {
 		</tr>
 		<tr ng-repeat="blog in blogdata">
 			<td>{{blog.blogName}}</td>
+			<td>{{blog.loginName}}</td>
 			<td>{{blog.blogDesc}}</td>
 			<td>{{blog.status}}</td>
 			<td>{{blog.likes}}</td>

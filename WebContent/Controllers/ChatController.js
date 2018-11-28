@@ -11,7 +11,7 @@ application.controller("ChatController", function($scope, $http, $cookies,
 	$scope.addMessage = function() {
 		console.log('Adding Message Method');
 		console.log($scope.User);
-		chatService.send($rootScope.currentUser.loginname + ":"
+		chatService.send($rootScope.currentUser.loginName + " : "
 				+ $scope.message);
 		$scope.message = "";
 	};

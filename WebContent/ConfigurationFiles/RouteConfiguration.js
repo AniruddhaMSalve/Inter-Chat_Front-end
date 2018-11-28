@@ -1,6 +1,7 @@
 var application = angular.module("RouteConfiguration", [ 'ngRoute', ,
 		'ngCookies' ]);
-application.config(function($routeProvider, $locationProvider) {
+ application.config(function($qProvider,$routeProvider, $locationProvider) {
+	$qProvider.errorOnUnhandledRejections(false);
 	console.log("Route Configuration Accessed");
 	$locationProvider.hashPrefix('');
 	$routeProvider.when('/ContactUs', {
@@ -9,6 +10,8 @@ application.config(function($routeProvider, $locationProvider) {
 		templateUrl : "View-Pages/AboutUs.html"
 	}).when('/Blog', {
 		templateUrl : "View-Blog/Blog.html"
+	}).when('/MyBlog', {
+		templateUrl : "View-Blog/MyBlog.html"
 	}).when('/ManageBlog', {
 		templateUrl : "View-Blog/ManageBlog.html"
 	}).when('/AddBlog', {
@@ -19,6 +22,8 @@ application.config(function($routeProvider, $locationProvider) {
 		templateUrl : "View-Blog/UpdateBlog.html"
 	}).when('/Forum', {
 		templateUrl : "View-Forum/Forum.html"
+	}).when('/MyForum', {
+		templateUrl : "View-Forum/MyForum.html"
 	}).when('/ManageForum', {
 		templateUrl : "View-Forum/ManageForum.html"
 	}).when('/AddForum', {
