@@ -21,6 +21,8 @@ application.controller("ForumController", function($scope,$rootScope, $http, $lo
 	$scope.addForum = function() {
 		console.log('Add Forum Accessed');
 		alert("Forum Added");
+		$scope.forum.status='NA';
+		$scope.forum.loginName=$rootScope.currentUser.loginName;
 		$http.post('http://localhost:8081/Inter_Chat_Middleware/addForum',
 				$scope.forum).then(function(response) {
 			$location.path("/AddForum");

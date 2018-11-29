@@ -1,4 +1,5 @@
-application.controller("MyBlogController", function($scope, $http,$rootScope, $location) {
+application.controller("MyBlogController", function($scope, $http, $rootScope,
+		$location) {
 	$scope.blog = {
 		'blogId' : 0,
 		'blogName' : '',
@@ -10,15 +11,24 @@ application.controller("MyBlogController", function($scope, $http,$rootScope, $l
 		'dislikes' : 0
 	};
 	$scope.myblogdata;
-	
+
 	function listMyBlog() {
 		console.log('List My Blog Accessed')
-		$http.get('http://localhost:8081/Inter_Chat_Middleware/showMyBlog/'+$rootScope.currentUser.loginName)
-				.then(function(response) {
+		$http.get(
+				'http://localhost:8081/Inter_Chat_Middleware/showMyBlog/'
+						+ $rootScope.currentUser.loginName).then(
+				function(response) {
 					console.log(response.data)
 					$scope.myblogdata = response.data
 				});
 	}
 	
+	$scope.update=function(blogId)
+	{
+		console.log("Update Accessed");
+		$rootScope.blogId=blogId;
+		$location.path("/UpdateBlog");
+	}
+
 	listMyBlog();
 });

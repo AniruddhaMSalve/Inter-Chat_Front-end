@@ -16,7 +16,7 @@ application.controller("UserController", function($scope, $http, $cookies,
 		$scope.User.role = 'ROLE_USER';
 		$http.post('http://localhost:8081/Inter_Chat_Middleware/addUserDetail',
 				$scope.User).then(function(response) {
-					alert("Registration Successful");
+			alert("Registration Successful");
 			console.log("Register Success");
 			alert("You have agreed to our Terms and Services");
 			$location.path("/Login");
@@ -50,15 +50,16 @@ application.controller("UserController", function($scope, $http, $cookies,
 
 	$scope.logincheck = function() {
 		console.log("Login Check Accessed");
-		$http.post('http://localhost:8081/Inter_Chat_Middleware/checkUserDetail',$scope.User)
-		.then(function(response) {
+		$http.post(
+				'http://localhost:8081/Inter_Chat_Middleware/checkUserDetail',
+				$scope.User).then(function(response) {
 			console.log("Login Checking Success");
 			$scope.User = response.data;
 			$rootScope.currentUser = response.data;
 			$cookieStore.put('userDetails', response.data);
 			console.log($rootScope.currentUser);
 			$location.path("/Blog");
-		});	
+		});
 	}
 
 	$scope.logout = function() {

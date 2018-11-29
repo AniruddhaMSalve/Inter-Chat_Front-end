@@ -1,8 +1,11 @@
 var application = angular.module("RouteConfiguration", [ 'ngRoute', ,
 		'ngCookies' ]);
- application.config(function($qProvider,$routeProvider, $locationProvider) {
+application.config(function($qProvider, $routeProvider, $locationProvider) {
+	
 	$qProvider.errorOnUnhandledRejections(false);
+	
 	console.log("Route Configuration Accessed");
+	
 	$locationProvider.hashPrefix('');
 	$routeProvider.when('/ContactUs', {
 		templateUrl : "View-Pages/ContactUs.html"

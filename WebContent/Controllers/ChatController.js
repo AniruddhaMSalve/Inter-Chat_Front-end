@@ -1,7 +1,6 @@
 application.controller("ChatController", function($scope, $http, $cookies,
-		$location, $cookieStore, $rootScope,
-		chatService) {
-	
+		$location, $cookieStore, $rootScope, chatService) {
+
 	console.log('Starting Chat Controller');
 
 	$scope.messages = [];

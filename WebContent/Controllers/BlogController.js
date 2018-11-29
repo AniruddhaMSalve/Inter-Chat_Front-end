@@ -22,10 +22,14 @@ application.controller("BlogController", function($scope, $http,$rootScope, $loc
 
 	$scope.addBlog = function() {
 		console.log('Add Blog Accessed');
+		$scope.blog.status='NA';
+		$scope.blog.likes=0;
+		$scope.blog.dislikes=0;
+		$scope.blog.loginName=$rootScope.currentUser.loginName;
 		alert("Blog Added");
 		$http.post('http://localhost:8081/Inter_Chat_Middleware/addBlog',
 				$scope.blog).then(function(response) {
-			$location.path("/AddBlog");
+			$location.path("/Blog");
 		});
 	}
 	
@@ -95,13 +99,6 @@ application.controller("BlogController", function($scope, $http,$rootScope, $loc
 							listBlog();
 			$location.path("/ViewBlog");
 		});
-	}
-
-	$scope.update=function(blogId)
-	{
-		console.log("Update Accessed");
-		$rootScope.blogId=blogId;
-		$location.path("/UpdateBlog");
 	}
 	
 	$scope.showComment=function(blogId)

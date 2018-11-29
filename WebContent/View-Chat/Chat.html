@@ -32,14 +32,15 @@ hr {
 			<img src="Images/chat.jpg" alt="Avatar" align="left"
 				style="height: 50%; width: 50%">
 		<form ng-submit="addMessage()" name="chatMsg">
-			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Chat Text</b> <input type="text"
-				ng-model="message" /> <span class="count"
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Chat
+				Text</b> <input type="text" ng-model="message" /> <span class="count"
 				ng-bind="max - message.length">140</span>
 			<button ng-disabled="message.length>140||message.length==0"
 				class="btn btn-info">Send</button>
 		</form>
 		<p ng-repeat="message in messages|orderBy:'time':true">
-			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img id="img1" src="Images/img_avatar1.png" alt="avatar"
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img
+				id="img1" src="Images/img_avatar1.png" alt="avatar"
 				class="img-circle" onerror=this.src=
 				"avatar.png" style="height: 60px; width: 60px">
 			<time>{{message.time|date:'HH:MM'}}</time>

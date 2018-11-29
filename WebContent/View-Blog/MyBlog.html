@@ -26,9 +26,11 @@ hr {
 
 <div class="container" ng-controller="MyBlogController">
 	<p ng-repeat="blog in myblogdata">
-		<font size="8"><b>{{blog.blogName}}</b></font> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp created by <i><b>{{blog.loginName}}</b> on {{blog.createDate}}</i> <img
-			src="Images/blog.jpg" alt="Avatar" style="height: 80%; width: 80%"><br>
-		<br> <font size="3">{{blog.blogDesc}}</font>
+		<font size="8"><b>{{blog.blogName}}</b></font> &nbsp &nbsp &nbsp &nbsp
+		&nbsp &nbsp &nbsp created by <i><b>{{blog.loginName}}</b> on
+			{{blog.createDate}}</i> <img src="Images/blog.jpg" alt="Avatar"
+			style="height: 80%; width: 80%"><br> <br> <font
+			size="3">{{blog.blogDesc}}</font>
 		<button
 			ng-hide="currentUser.role=='ROLE_ADMIN'||currentUser==undefined"
 			type="button" ng-click="update(blog.blogId)"

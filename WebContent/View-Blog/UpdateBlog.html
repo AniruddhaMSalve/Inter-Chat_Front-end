@@ -28,15 +28,18 @@ h4 {
 	<table align="center">
 		<tr>
 			<th>Blog Name</th>
-			<td><input type="text" required name="blogName" ng-model="blog.blogName" /></td>
+			<td><input type="text" required name="blogName"
+				ng-model="blog.blogName" /></td>
 		</tr>
 		<tr>
 			<th>Blog Content</th>
-			<td><textarea cols="80" required rows="8" ng-model="blog.blogDesc"></textarea></td>
+			<td><textarea cols="80" required rows="8"
+					ng-model="blog.blogDesc"></textarea></td>
 		</tr>
 		<tr align="center">
 			<td colspan="2"><input value="Update Blog"
-				class="btn btn-warning" ng-click="updateBlog(blog.blogId)" type="submit" /></td>
+				class="btn btn-warning" ng-click="updateBlog(blog.blogId)"
+				type="submit" /></td>
 		</tr>
 	</table>
 </div>

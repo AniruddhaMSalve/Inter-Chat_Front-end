@@ -23,23 +23,62 @@ h4 {
 </style>
 
 <div ng-controller="JobController" class="container">
-<div class="imgcontainer">
+	<div class="imgcontainer">
 		<hr></hr>
 		<h2 align="center">
 			<b>Job Application Form</b>
 		</h2>
 		<hr></hr>
-		<img src="Images/job.png" alt="Avatar" style="height:40%;width:40%">
-</div>
-<div>
+		<img src="Images/job.png" alt="Avatar" style="height: 40%; width: 40%">
+		<table align="right">
+			<tr>
+				<th>Your Name</th>
+				<td><input type="text" required="required" name="loginName"
+					ng-model="applyjobdata.loginName" /></td>
+			</tr>
+			<tr>
+				<th>Job Id</th>
+				<td><input type="text" required="required" name="jobId"
+					ng-model="applyjobdata.jobId" /></td>
+			</tr>
+			<tr align="center">
+				<td></td>
+				<td colspan="2"><input value="Apply" class="btn btn-primary"
+					ng-click="apply()" type="submit" /></td>
+			</tr>
+		</table>
+	</div>
+	<div class="container" ng-controller="JobController">
+		<table id="table2" class="table">
+			<tr>
+				<th>Job Id</th>
+				<th>Job Designation</th>
+				<th>Job Description</th>
+				<th>Company</th>
+				<th>Salary</th>
+				<th>Location</th>
+				<th>Last Date To Apply</th>
+			</tr>
+			<tr ng-repeat="job in jobdata">
+				<td>{{job.jobId}}</td>
+				<td>{{job.jobDesignation}}</td>
+				<td>{{job.jobDescription}}</td>
+				<td>{{job.company}}</td>
+				<td>{{job.salary}}</td>
+				<td>{{job.location}}</td>
+				<td>{{job.lastDateToApply}}</td>
+			</tr>
+		</table>
+	</div>
+	<!-- <div>
 	<hr>
 	<table align="center">
 		<tr>
-			<th>Your Name</th>
+			<th>Your Name  </th>
 			<td><input type="text" required="required" name="loginName" ng-model="applyjobdata.loginName" /></td>
 		</tr>
 		<tr>
-			<th>Job Id</th>
+			<th>Job Id  </th>
 			<td><input type="text" required="required" name="jobId" ng-model="applyjobdata.jobId"/></td>
 		</tr>
 		<tr align="center">
@@ -47,7 +86,7 @@ h4 {
 				class="btn btn-primary" ng-click="apply()" type="submit" /></td>
 		</tr>
 	</table>
-</div>
+</div> -->
 </div>
 <br>
 <br>

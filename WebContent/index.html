@@ -132,14 +132,16 @@ footer {
 				<li class="active"><a href="#/Blog"><span
 						class="glyphicon glyphicon-home"></span> Home</a></li>
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown"><span
-						class="glyphicon glyphicon-pencil"></span> Blogs<span
-						class="caret"></span></a>
+					data-toggle="dropdown"><span class="glyphicon glyphicon-pencil"></span>
+						Blogs<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#/Blog">Browse Blogs</a></li>
-						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/MyBlog">My Blogs</a></li>
-						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/AddBlog">Create
-								Blog</a></li>
+						<li
+							ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
+							href="#/MyBlog">My Blogs</a></li>
+						<li
+							ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
+							href="#/AddBlog">Create Blog</a></li>
 						<li
 							ng-hide="currentUser.role=='ROLE_USER'||currentUser==undefined"><a
 							href="#/ManageBlog">Manage Blogs</a></li>
@@ -149,24 +151,34 @@ footer {
 						Forums<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#/Forum">Browse Forums</a></li>
-						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/MyForum">My Forums</a></li>
-						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/AddForum">Create
-								Forum</a></li>
+						<li
+							ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
+							href="#/MyForum">My Forums</a></li>
+						<li
+							ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
+							href="#/AddForum">Create Forum</a></li>
 						<li
 							ng-hide="currentUser.role=='ROLE_USER'||currentUser==undefined"><a
 							href="#/ManageForum">Manage Forums</a></li>
-					</ul>
-				</li>
-				<li  ng-hide="currentUser==undefined" class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown"><span class="glyphicon glyphicon-certificate"></span>
-						Jobs<span class="caret"></span></a>
+					</ul></li>
+				<li ng-hide="currentUser==undefined" class="dropdown"><a
+					class="dropdown-toggle" data-toggle="dropdown"><span
+						class="glyphicon glyphicon-certificate"></span> Jobs<span
+						class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/Job">Browse Jobs</a></li>
-						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_USER'"><a href="#/AddJob">Add Job</a></li>
-						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_USER'"><a href="#/ManageJob">Manage Job</a></li>
-						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/ApplyJob">Job Application</a></li>
-					</ul>
-				</li>
+						<li
+							ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
+							href="#/Job">Browse Jobs</a></li>
+						<li
+							ng-hide="currentUser==undefined||currentUser.role=='ROLE_USER'"><a
+							href="#/AddJob">Add Job</a></li>
+						<li
+							ng-hide="currentUser==undefined||currentUser.role=='ROLE_USER'"><a
+							href="#/ManageJob">Manage Job</a></li>
+						<li
+							ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
+							href="#/ApplyJob">Job Application</a></li>
+					</ul></li>
 				<li class="dropdown"><a class="dropdown-toggle"
 					ng-hide="currentUser.role==undefined||currentUser.role=='ROLE_ADMIN'"
 					data-toggle="dropdown"><img src="Images/friend.png"
@@ -206,9 +218,13 @@ footer {
 							<li><a href="#/UploadPicture"> Upload Profile Picture</a></li>
 							<li><a href="#/Profile"><span
 									class="glyphicon glyphicon-user"></span> View Profile</a></li>
-							<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/Chat"><span
-									class="glyphicon glyphicon-envelope"></span> Chat</a></li>
-									<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/AppliedJob"><span
+							<li
+								ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
+								href="#/Chat"><span class="glyphicon glyphicon-envelope"></span>
+									Chat</a></li>
+							<li
+								ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
+								href="#/AppliedJob"><span
 									class="glyphicon glyphicon-certificate"></span> Applied Jobs</a></li>
 							<li align="center"
 								ng-show="currentUser.role=='ROLE_USER'||currentUser.role=='ROLE_ADMIN'">
